@@ -1,0 +1,14 @@
+{
+  "author": "Nathanael Araujo da Silva",
+  "version": "1.0.0",
+  "description": "API RESTful API - Nodes + Express + MongoDb",
+  "name": "api-node",
+  "main": "server.js",
+
+  "dependencies": {
+    "body-parser": "~1.0.1",
+    "express": "~4.0.0",
+    "mongoose": "*",
+    "request": "^2.74.0",
+  }
+}
