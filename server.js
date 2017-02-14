@@ -78,6 +78,7 @@ router.route('/series/:serie_id')
         else if(error)
           response.send(error);
         else {
+          var serie = new Serie();
           serie.name = request.body.name;
           serie.year = request.body.year;
           serie.season = request.body.season;
