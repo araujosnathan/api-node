@@ -2,17 +2,16 @@ var express = require('express');
 var api = express();
 var body_parser = require('body-parser');
 var mongoose = require('mongoose');
-var HttpStatus = require('http-status-codes');
 
 var Serie = require('../api-node/models/serie');
-var serie = new Serie();
 
-mongoose.connect('mongodb://root:12345678@jello.modulusmongo.net:27017/Hira2hyp');
+
+mongoose.connect('mongodb://root:12345678@jello.modulusmongo.net:27017/Hira2hyp')
 
 api.use(body_parser.urlencoded({extend: true}));
 api.use(body_parser.json());
 
-var port = process.env.PORT || 2000;
+var port = process.env.PORT || 3000;
 
 var router = express.Router();
 
@@ -28,49 +27,35 @@ router.get('/',
 });
 
 router.route('/series')
-  .post(
-    function(request, response){
+  .post( function(request, response){
+    var serie = new Serie();
+    serie.name = request.body.name;
+    serie.year = request.body.year;
+    serie.season = request.body.season;
+    serie.genre = request.body.genre;
 
-      serie.name = request.body.name;
-      serie.year = request.body.year;
-      serie.season = request.body.season;
-      serie.genre = request.body.genre
-
-      if(serie.name == null || serie.year == null || serie.season == null || serie.genre == null)
-        response.status(400).json({ message: 'Missing required property: name/year/season or genre'});
-      else {
-        serie.save(
-          function(error){
-            if(error)
-              response.send(error);
-            else {
-              response.status(201).json({ message: 'Serie was created'});
-            }
-          });
-      }
-
-      })
-
-    .get(
-      function(request, response){
-        Serie.find(
-          function(err, series){
-            if(err)
-              response.send(err);
-            response.json(series)
-        });
+    if(serie.name == null || serie.year == null || serie.season == null || serie.genre == null)
+      response.status(400).json({ message: 'Missing required property: name/year/season or genre'});
+    else
+    {
+      serie.save(function(error, serie){
+        if(error)
+          response.send(error);
+        else
+          response.status(201).json(serie);
       });
+    }
 
-// router.route('/series/:nome')
-//   .get(
-//     function(request, response){
-//       Serie.findOne({nome: request.params.nome}, function(error, serie){
-//         if(error)
-//           response.send(error)
-//
-//         response.json(serie);
-//       });
-//     })
+  })
+
+  .get(function(request, response){
+    Serie.find(function(err, series){
+      if(err)
+        response.send(err);
+      else
+        response.json(series);
+      });
+  });
 
 router.route('/series/:serie_id')
   .get(
@@ -87,16 +72,16 @@ router.route('/series/:serie_id')
 
   .put(
     function(request, response){
-        Serie.findById(request.params.serie_id, function(error, serie){
+      Serie.findById(request.params.serie_id, function(error, serie){
         if(serie == null)
           response.status(404).json({message: "Not Found"});
         else if(error)
           response.send(error);
         else {
-          serie.nome = request.body.nome;
-          serie.ano = request.body.ano;
-          serie.temporadas = request.body.temporadas;
-          serie.genero = request.body.genero;
+          serie.name = request.body.name;
+          serie.year = request.body.year;
+          serie.season = request.body.season;
+          serie.genre = request.body.genre;
 
           serie.save(
             function(error){
@@ -105,13 +90,11 @@ router.route('/series/:serie_id')
               else {
                 response.status(204).send();
               }
-
-
           });
 
         }
-    });
-  })
+      });
+    })
 
   .delete(
     function(request, response){
