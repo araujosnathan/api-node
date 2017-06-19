@@ -9,10 +9,10 @@ First you need downloading this project and then install all dependencies for st
 
 # Dependencies
 
-body-parser
-express
-mongoose
-request
+*body-parser
+*express
+*mongoose
+*request
 
 # How to install
 
@@ -35,11 +35,11 @@ This file has all routes and verbs that API will use.
 
 API ROUTES AND VERBS
 
-POST   - router.route('/series')           => To add a serie
-GET    - router.route('/series')           => to get all series
-GET    - router.route('/series/:serie_id') => To get a specific serie
-PUT    - router.route('/series/:serie_id') => To update a specific serie
-DELETE - router.route('/series/:serie_id') => To delete a specific serie
+*POST   - router.route('/series')           => To add a serie
+*GET    - router.route('/series')           => to get all series
+*GET    - router.route('/series/:serie_id') => To get a specific serie
+*PUT    - router.route('/series/:serie_id') => To update a specific serie
+*DELETE - router.route('/series/:serie_id') => To delete a specific serie
 
 # FILE: serie.js
 
