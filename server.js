@@ -6,12 +6,12 @@ var mongoose = require('mongoose');
 var Serie = require('../api-node/models/serie');
 
 
-mongoose.connect('mongodb://root:12345678@jello.modulusmongo.net:27017/Hira2hyp')
+mongoose.connect('mongodb://root:12345678@ds133192.mlab.com:33192/series')
 
 api.use(body_parser.urlencoded({extend: true}));
 api.use(body_parser.json());
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 9000;
 
 var router = express.Router();
 
@@ -78,7 +78,6 @@ router.route('/series/:serie_id')
         else if(error)
           response.send(error);
         else {
-          var serie = new Serie();
           serie.name = request.body.name;
           serie.year = request.body.year;
           serie.season = request.body.season;

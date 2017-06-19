@@ -4,10 +4,10 @@
   "description": "API RESTful API - Nodes + Express + MongoDb",
   "name": "api-node",
   "main": "server.js",
-  "dependencies":{
+  "dependencies": {
     "body-parser": "~1.0.1",
     "express": "~4.0.0",
-    "mongoose": "*",
+    "mongoose": "^4.10.7",
     "request": "^2.74.0"
   }
 }
