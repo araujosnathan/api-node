@@ -61,11 +61,11 @@ PS: on server.js you need a uri for connecting on bd <br>
 
 mongoose.connect('mongodb://localhost/serie'); <br>
 
-You can setup mongodb: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
-Then, you need create a database: serie
+You can setup mongodb: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/ <br>
+Then, you need create a database: serie <br>
 
-brew update
-brew install mongodb
+brew update <br>
+brew install mongodb <br>
 
 brew services start mongodb -> To start mongodb server <br>
 mongo -> To start mongo server <br>
