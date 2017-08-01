@@ -6,12 +6,12 @@ var mongoose = require('mongoose');
 var Serie = require('../api-node/models/serie');
 
 
-mongoose.connect('mongodb://root:12345678@ds133192.mlab.com:33192/series')
+mongoose.connect('mongodb://localhost/serie')
 
 api.use(body_parser.urlencoded({extend: true}));
 api.use(body_parser.json());
 
-var port = process.env.PORT || 9000;
+var port = process.env.PORT || 3000;
 
 var router = express.Router();
 
