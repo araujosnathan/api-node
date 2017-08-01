@@ -59,11 +59,23 @@ It should to return all series on BD if it exists.
 
 PS: on server.js you need a uri for connecting on bd <br>
 
-mongoose.connect('mongodb://root:12345678@jello.modulusmongo.net:27017/Hira2hyp'); <br>
+mongoose.connect('mongodb://localhost/serie'); <br>
 
-You can access this link: https://xervo.io/, create account and create a database, then get uri and put in this line <br>
+You can setup mongodb: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+Then, you need create a database: serie
 
-mongoose.connect('your_uri'); <br>
+brew update
+brew install mongodb
+
+brew services start mongodb -> To start mongodb server <br>
+mongo -> To start mongo server <br>
+After you started mongo client, execute:
+
+use serie -> To create our database<br>
+
+Ready!<br>
+
+You can use: mongoose.connect('mongodb://localhost/serie'); <br>
 
 
 Do not get stuck in this simple project, always seek more knowledge <br>
