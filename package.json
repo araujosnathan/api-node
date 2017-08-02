@@ -9,6 +9,6 @@
     "express": "~4.0.0",
     "mongoose": "^4.10.7",
     "request": "^2.74.0",
-    "mongodb": "~2.0"
+    "mongodb": "~2.2.19"
   }
 }
