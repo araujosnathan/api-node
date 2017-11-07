@@ -2,11 +2,14 @@ var express = require('express');
 var api = express();
 var body_parser = require('body-parser');
 var mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
 
 var Serie = require('../api-node/models/serie');
 
 
-mongoose.connect('mongodb://localhost/serie')
+mongoose.connect('mongodb://localhost/natflix', {
+  useMongoClient: true,
+});
 
 api.use(body_parser.urlencoded({extend: true}));
 api.use(body_parser.json());
@@ -33,7 +36,6 @@ router.route('/series')
     serie.year = request.body.year;
     serie.season = request.body.season;
     serie.genre = request.body.genre;
-
     if(serie.name == null || serie.year == null || serie.season == null || serie.genre == null)
       response.status(400).json({ message: 'Missing required property: name/year/season or genre'});
     else

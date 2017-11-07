@@ -4,6 +4,9 @@
   "description": "API RESTful API - Nodes + Express + MongoDb",
   "name": "api-node",
   "main": "server.js",
+  "scripts": {
+    "prestart" : "node create_db.js"
+  },
   "dependencies": {
     "body-parser": "~1.0.1",
     "express": "~4.0.0",
