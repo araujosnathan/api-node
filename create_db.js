@@ -19,7 +19,7 @@ MongoClient.connect(url, function(err, db) {
   console.log("Database created!");
   
   db.collection("series").drop(function(err, sucess) {
-    if (err) throw err;
+    if (err) db.createCollection("series");
     if (sucess) console.log("Collection deleted");
   });
 
