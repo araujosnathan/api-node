@@ -33,10 +33,6 @@ This way is practice for exporting your project and you don't have a hard word f
 Here we have our server that we will up!<br>
 This file has all routes and verbs that API will use.<br>
 
-# FILE: create_db.js
-
-In this source is created a db with one serie.
-
 API ROUTES AND VERBS<br>
 
 POST   - router.route('/series')           => To add a serie <br>
@@ -48,6 +44,10 @@ DELETE - router.route('/series/:serie_id') => To delete a specific serie <br>
 # FILE: serie.js
 
 Now we define how will be our schema on BD and exports this model to be used in POST, GET, PUT or DELETE.
+
+# FILE: create_db.js
+
+In this source is created a db with one serie.
 
 # After you know all this, how do you up the server?
 
