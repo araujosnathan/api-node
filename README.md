@@ -33,6 +33,10 @@ This way is practice for exporting your project and you don't have a hard word f
 Here we have our server that we will up!<br>
 This file has all routes and verbs that API will use.<br>
 
+# FILE: create_db.js
+
+In this source is created a db with one serie.
+
 API ROUTES AND VERBS<br>
 
 POST   - router.route('/series')           => To add a serie <br>
@@ -47,36 +51,15 @@ Now we define how will be our schema on BD and exports this model to be used in 
 
 # After you know all this, how do you up the server?
 
-node server.js<br>
+npm start<br>
 
 A messange should be displayed: 'Starting API on port 5000'
 
 # Ready! Our API has been started!
 
 You can use Postman for testing if API is working<br>
-With postman open, choose a any verb, for exemple: 'GET' and put a url: 'http://localhost:5000/api/series/'<br>
+With postman open, choose a any verb, for exemple: 'GET' and put a url: 'http://localhost:3000/api/series/'<br>
 It should to return all series on BD if it exists.
-
-PS: on server.js you need a uri for connecting on bd <br>
-
-mongoose.connect('mongodb://localhost/serie'); <br>
-
-You can setup mongodb: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/ <br>
-Then, you need create a database: serie <br>
-
-brew update <br>
-brew install mongodb <br>
-
-brew services start mongodb -> To start mongodb server <br>
-mongo -> To start mongo server <br>
-After you started mongo client, execute:
-
-use serie -> To create our database<br>
-
-Ready!<br>
-
-You can use: mongoose.connect('mongodb://localhost/serie'); <br>
-
 
 Do not get stuck in this simple project, always seek more knowledge <br>
 
