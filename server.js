@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost/natflix', {
 api.use(body_parser.urlencoded({extend: true}));
 api.use(body_parser.json());
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 9000;
 
 var router = express.Router();
 
