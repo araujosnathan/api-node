@@ -53,7 +53,7 @@ In this source is created a db with one serie.
 
 npm start<br>
 
-A messange should be displayed: 'Starting API on port 5000'
+A messange should be displayed: 'Starting API on port 3000'
 
 # Ready! Our API has been started!
 
