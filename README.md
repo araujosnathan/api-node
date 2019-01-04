@@ -22,10 +22,20 @@ npm install
 Now you have this project on your PC and all dependencies are installed. <br>
 Let's understand  each file!
 
+<br>
+If you don't have mongodb installed, you can install by this link: https://treehouse.github.io/installation-guides/mac/mongo-mac.html <br>
+
+After mongodb has installed you need to create the directory in the default location by running `mkdir -p /data/db` <br>
+Make sure that the **/data/db** directory has the right permissions by running:
+```
+sudo chown -R `id -un` /data/db
+```
+
+
 # FILE: package.json
 
 In this file we have our signature and dependencies that project will need!<br>
-Once that you have all dependencies in this file you just need to execute: 'npm install' to install them.<br>
+Once that you have all dependencies in this file you just need to execute: `npm install` to install them.<br>
 This way is practice for exporting your project and you don't have a hard word for installing each dependency manually.
 
 # FILE: server.js
@@ -50,8 +60,14 @@ Now we define how will be our schema on BD and exports this model to be used in 
 In this source is created a db with one serie.
 
 # After you know all this, how do you up the server?
-
-npm start<br>
+First, start the mongodb:
+```
+mongod
+```
+Then, in other terminal window:
+```
+npm start
+``` 
 
 A messange should be displayed: 'Starting API on port 3000'
 
