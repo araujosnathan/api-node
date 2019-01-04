@@ -17,7 +17,7 @@ request<br>
 # How to install
 
 ```
-git clone https://github.com/nathsilv/api-node.git <br>
+git clone https://github.com/nathsilv/api-node.git
 npm install
 ``` 
 
@@ -47,11 +47,11 @@ This file has all routes and verbs that API will use.<br>
 
 API ROUTES AND VERBS<br>
 ```
-POST   - router.route('/series')           => To add a serie <br>
-GET    - router.route('/series')           => to get all series <br>
-GET    - router.route('/series/:serie_id') => To get a specific serie <br>
-PUT    - router.route('/series/:serie_id') => To update a specific serie <br>
-DELETE - router.route('/series/:serie_id') => To delete a specific serie <br>
+POST   - router.route('/series')           => To add a serie
+GET    - router.route('/series')           => to get all series
+GET    - router.route('/series/:serie_id') => To get a specific serie
+PUT    - router.route('/series/:serie_id') => To update a specific serie
+DELETE - router.route('/series/:serie_id') => To delete a specific serie
 ```
 # FILE: serie.js
 
