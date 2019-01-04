@@ -16,8 +16,10 @@ request<br>
 
 # How to install
 
+```
 git clone https://github.com/nathsilv/api-node.git <br>
 npm install
+``` 
 
 Now you have this project on your PC and all dependencies are installed. <br>
 Let's understand  each file!
@@ -44,13 +46,13 @@ Here we have our server that we will up!<br>
 This file has all routes and verbs that API will use.<br>
 
 API ROUTES AND VERBS<br>
-
+```
 POST   - router.route('/series')           => To add a serie <br>
 GET    - router.route('/series')           => to get all series <br>
 GET    - router.route('/series/:serie_id') => To get a specific serie <br>
 PUT    - router.route('/series/:serie_id') => To update a specific serie <br>
 DELETE - router.route('/series/:serie_id') => To delete a specific serie <br>
-
+```
 # FILE: serie.js
 
 Now we define how will be our schema on BD and exports this model to be used in POST, GET, PUT or DELETE.
